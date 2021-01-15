@@ -1,0 +1,1 @@
+alert("Check is working JS Script")

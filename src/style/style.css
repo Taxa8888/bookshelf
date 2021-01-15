@@ -1,3 +1,26 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  min-height: 100vh;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
 p {
-    font-size: 60px;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 40px;
+  font-weight: 400;
+  color: green;
 }
