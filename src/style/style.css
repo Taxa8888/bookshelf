@@ -8,6 +8,37 @@ body {
   height: auto;
   margin: 0 auto;
   min-height: 100vh;
+  background: url("../img/background.jpg");
+}
+
+.body-overflow {
+  overflow: hidden;
+}
+
+.wrapper-shadow {
+  top: 0;
+  left: 0;
+  display: flex;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  z-index: -1;
+}
+
+.wrapper-shadow--active {
+  overflow: hidden;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(41, 41, 41, 0.6);
+  z-index: 1;
+}
+
+.main-title{
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 48px;
+  font-weight: 600;
+  text-align: center;
 }
 
 .wrapper {
@@ -18,9 +49,119 @@ body {
   margin: 0 auto;
 }
 
-p {
-  font-family: "Courier New", Courier, monospace;
-  font-size: 40px;
-  font-weight: 400;
-  color: green;
+.main-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.book-card {
+  width: 480px;
+  height: 320px;
+  display: flex;
+  position: relative;
+  margin: 25px;
+  background-color: white;
+  border-radius: 19px;
+}
+
+.book-card-image {
+  width: 240px;
+  height: 320px;
+  border-radius: 19px 0 0 19px;
+}
+
+.book-card-title {
+  position: absolute;
+  top: 10px;
+  margin: 15px;
+}
+
+.book-card-author {
+  position: absolute;
+  bottom: 50%;
+  margin: 15px;
+}
+
+.book-card-year {
+  position: absolute;
+  bottom: 10px;
+  margin: 15px;
+}
+
+.book-button-add {
+  width: 100px;
+  height: 40px;
+  margin: 20px 40px;
+  cursor: pointer;
+}
+
+.book-button-edit {
+  position: absolute;
+  bottom: 50px;
+  right: 5px;
+  width: 100px;
+  height: 40px;
+  margin: 0 0 2px 0;
+  cursor: pointer;
+}
+
+.book-button-delete {
+  position: absolute;
+  bottom: 10px;
+  right: 5px;
+  width: 100px;
+  height: 40px;
+  cursor: pointer;
+}
+
+
+.popup-add {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 30%;
+  left: 30%;
+  z-index: 10;
+  width: 600px;
+  height: auto;
+  margin: 0 auto;
+  background-color: white;
+  border-radius: 19px;
+}
+
+.popup-add--title {
+  text-align: center;
+  margin: 10px 10px;
+}
+
+.popup-book--title-input, .popup-book--author-input, .popup-book--image-input {
+  width: 400px;
+  margin: 10px 10px;
+}
+
+.popup-book--year-input {
+  width: 100px;
+  margin: 10px 10px;
+}
+
+.popup-book--title, .popup-book--author, .popup-book--year, .popup-book--image {
+  margin: 0 5px;
+}
+
+.popup-button--container {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+}
+
+.popup-button--save {
+  width: 100px;
+  height: 40px;
+  margin: 5px 10px;
+}
+
+.popup-button--cancel {
+  width: 100px;
+  height: 40px;
 }
