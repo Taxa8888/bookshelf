@@ -1,0 +1,23 @@
+{
+  "name": "bookshelf",
+  "version": "1.0.0",
+  "description": "My project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Taxa8888/bookshelf.git"
+  },
+  "author": "Pavel Ponamarev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Taxa8888/bookshelf/issues"
+  },
+  "homepage": "https://github.com/Taxa8888/bookshelf#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^7.20.0"
+  }
+}
