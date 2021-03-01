@@ -1,0 +1,18 @@
+.wrapper-shadow {
+    top: 0;
+    left: 0;
+    display: flex;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    z-index: -1;
+  }
+
+  .wrapper-shadow--active {
+    overflow: hidden;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(41, 41, 41, 0.6);
+    z-index: 1;
+  }
