@@ -1,0 +1,36 @@
+.book-button-add {
+    width: 100px;
+    height: 40px;
+    margin: 20px 40px;
+    cursor: pointer;
+  }
+
+  .book-button-edit {
+    position: absolute;
+    bottom: 50px;
+    right: 5px;
+    width: 100px;
+    height: 40px;
+    margin: 0 0 2px 0;
+    cursor: pointer;
+  }
+
+  .book-button-delete {
+    position: absolute;
+    bottom: 10px;
+    right: 5px;
+    width: 100px;
+    height: 40px;
+    cursor: pointer;
+  }
+
+  .popup-button--save {
+    width: 100px;
+    height: 40px;
+    margin: 5px 10px;
+  }
+
+  .popup-button--cancel {
+    width: 100px;
+    height: 40px;
+  }
