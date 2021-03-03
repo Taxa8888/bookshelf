@@ -1,0 +1,43 @@
+.popup-add {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 30%;
+  left: 30%;
+  z-index: 10;
+  width: 600px;
+  height: auto;
+  margin: 0 auto;
+  background-color: white;
+  border-radius: 19px;
+}
+
+.popup-add--title {
+  text-align: center;
+  margin: 10px 10px;
+}
+
+.popup-book--title-input,
+.popup-book--author-input,
+.popup-book--image-input {
+  width: 400px;
+  margin: 10px 10px;
+}
+
+.popup-book--year-input {
+  width: 100px;
+  margin: 10px 10px;
+}
+
+.popup-book--title,
+.popup-book--author,
+.popup-book--year,
+.popup-book--image {
+  margin: 0 5px;
+}
+
+.popup-button--container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
