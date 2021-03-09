@@ -23,8 +23,8 @@ function createBookField(books) {
         bootTitle.className = 'book-card-title';
         bookAuthor.className = 'book-card-author';
         bookYear.className = 'book-card-year';
-        buttonEdit.className = 'book-button-edit'
-        buttonDelete.className = 'book-button-delete'
+        buttonEdit.className = 'book-button-edit';
+        buttonDelete.className = 'book-button-delete';
 
         bookCard.dataset.number = kit.id;
         bookImage.src = kit.img;
@@ -48,8 +48,8 @@ function createBookField(books) {
             wrapperShadow.classList.toggle('wrapper-shadow--active');
             body.classList.toggle('body-overflow');
 
-            const popupButtonSave = document.querySelector('.popup-button--save');
-            const popupButtonCancel = document.querySelector('.popup-button--cancel');
+            const popupButtonSave = document.querySelector('.popup-button-save');
+            const popupButtonCancel = document.querySelector('.popup-button-cancel');
             const popupBookTitleInput = document.querySelector('.popup-book--title-input');
             const popupBookAuthorInput = document.querySelector('.popup-book--author-input');
             const popupBookYearInput = document.querySelector('.popup-book--year-input');
@@ -120,8 +120,8 @@ function createPopupForm(e) {
     popupBookImage.className = 'popup-book--image';
     popupBookImageInput.className = 'popup-book--image-input';
     popupButtonContainer.className = 'popup-button--container'
-    popupButtonSave.className = 'popup-button--save';
-    popupButtonCancel.className = 'popup-button--cancel';
+    popupButtonSave.className = 'popup-button-save';
+    popupButtonCancel.className = 'popup-button-cancel';
 
     if (e.path[0].textContent === "Добавить") {
         popupAddTitle.textContent = "Добавление новой книги";
@@ -171,8 +171,8 @@ addButton.addEventListener('click', (e) => {
     wrapperShadow.classList.toggle('wrapper-shadow--active');
     body.classList.toggle('body-overflow');
 
-    const popupButtonSave = document.querySelector('.popup-button--save');
-    const popupButtonCancel = document.querySelector('.popup-button--cancel');
+    const popupButtonSave = document.querySelector('.popup-button-save');
+    const popupButtonCancel = document.querySelector('.popup-button-cancel');
     const popupBookTitleInput = document.querySelector('.popup-book--title-input');
     const popupBookAuthorInput = document.querySelector('.popup-book--author-input');
     const popupBookYearInput = document.querySelector('.popup-book--year-input');
