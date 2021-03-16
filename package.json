@@ -4,7 +4,7 @@
   "description": "My project",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint src/*.js"
+    "lint": "eslint src --ext .js"
   },
   "repository": {
     "type": "git",
