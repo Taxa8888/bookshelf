@@ -150,7 +150,7 @@ function createBookField(allBooks) {
 
 createBookField(books);
 
-// Функиця генерации уникального id
+// Функция генерации уникального id
 
 function createID() {
   const idArray = [];
