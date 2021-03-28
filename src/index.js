@@ -64,6 +64,19 @@ function createPopupForm(e) {
   popupButtonContainer.append(popupButtonCancel);
 }
 
+// Действие при закрытие модального окна
+const closePopup = function() {
+  body.removeChild(body.lastChild);
+  wrapperShadow.classList.toggle('wrapper-shadow--active');
+  body.classList.toggle('body-overflow');
+};
+
+// Действие при открытие модального окна
+const openPopup = function() {
+  wrapperShadow.classList.toggle('wrapper-shadow--active');
+  body.classList.toggle('body-overflow');
+};
+
 // Отображаем список книг
 function createBookField(allBooks) {
   allBooks.forEach((kit) => {
@@ -104,8 +117,7 @@ function createBookField(allBooks) {
 
     buttonEdit.addEventListener('click', (e) => {
       createPopupForm(e);
-      wrapperShadow.classList.toggle('wrapper-shadow--active');
-      body.classList.toggle('body-overflow');
+      openPopup();
 
       const popupButtonSave = document.querySelector('.popup-button-save');
       const popupButtonCancel = document.querySelector('.popup-button-cancel');
@@ -130,16 +142,10 @@ function createBookField(allBooks) {
         bookYear.textContent = `${popupBookYearInput.value}`;
         bookImage.src = popupBookImageInput.value;
 
-        body.removeChild(body.lastChild);
-        wrapperShadow.classList.toggle('wrapper-shadow--active');
-        body.classList.toggle('body-overflow');
+        closePopup();
       });
 
-      popupButtonCancel.addEventListener('click', () => {
-        body.removeChild(body.lastChild);
-        wrapperShadow.classList.toggle('wrapper-shadow--active');
-        body.classList.toggle('body-overflow');
-      });
+      popupButtonCancel.addEventListener('click', closePopup);
     });
 
     buttonDelete.addEventListener('click', () => {
@@ -166,8 +172,7 @@ function createID() {
 // Добавление новой книги и работа с ней
 addButton.addEventListener('click', (e) => {
   createPopupForm(e);
-  wrapperShadow.classList.toggle('wrapper-shadow--active');
-  body.classList.toggle('body-overflow');
+  openPopup();
 
   const popupButtonSave = document.querySelector('.popup-button-save');
   const popupButtonCancel = document.querySelector('.popup-button-cancel');
@@ -182,31 +187,20 @@ addButton.addEventListener('click', (e) => {
       return;
     }
 
-    const newBooks = [];
-    const newBook = {};
-    newBook.id = createID();
-    newBook.title = popupBookTitleInput.value;
-    newBook.author = popupBookAuthorInput.value;
-    newBook.year = popupBookYearInput.value;
-    newBook.img = popupBookImageInput.value;
-    newBooks.push(newBook);
+    const newBook = {
+      id: createID(),
+      title: popupBookTitleInput.value,
+      author: popupBookAuthorInput.value,
+      year: popupBookYearInput.value,
+      img: popupBookImageInput.value,
+    };
 
-    createBookField(newBooks);
+    createBookField([newBook]);
 
-    body.removeChild(body.lastChild);
-    wrapperShadow.classList.toggle('wrapper-shadow--active');
-    body.classList.toggle('body-overflow');
+    closePopup();
   });
 
-  popupButtonCancel.addEventListener('click', () => {
-    body.removeChild(body.lastChild);
-    wrapperShadow.classList.toggle('wrapper-shadow--active');
-    body.classList.toggle('body-overflow');
-  });
+  popupButtonCancel.addEventListener('click', closePopup);
 });
 
-wrapperShadow.addEventListener('click', () => {
-  body.removeChild(body.lastChild);
-  wrapperShadow.classList.toggle('wrapper-shadow--active');
-  body.classList.toggle('body-overflow');
-});
+wrapperShadow.addEventListener('click', closePopup);
