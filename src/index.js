@@ -4,6 +4,7 @@ const body = document.querySelector('body');
 const wrapperShadow = document.querySelector('.wrapper-shadow');
 const mainContainer = document.querySelector('.main-container');
 const addButton = document.querySelector('.book-button-add');
+let counter = 3;
 
 // Вызываем форму добавление или редактирования книги
 function createPopupForm(e) {
@@ -65,20 +66,20 @@ function createPopupForm(e) {
 }
 
 // Действие при закрытие модального окна
-const closePopup = function() {
+const closePopup = () => {
   body.removeChild(body.lastChild);
   wrapperShadow.classList.toggle('wrapper-shadow--active');
   body.classList.toggle('body-overflow');
 };
 
 // Действие при открытие модального окна
-const openPopup = function() {
+const openPopup = () => {
   wrapperShadow.classList.toggle('wrapper-shadow--active');
   body.classList.toggle('body-overflow');
 };
 
 // Отображаем список книг
-function createBookField(allBooks) {
+function createBookFields(allBooks) {
   allBooks.forEach((kit) => {
     const bookCard = document.createElement('div');
     const bookImage = document.createElement('img');
@@ -154,20 +155,7 @@ function createBookField(allBooks) {
   });
 }
 
-createBookField(books);
-
-// Функция генерации уникального id
-
-function createID() {
-  const idArray = [];
-  for (let i = 0; i < books.length; i += 1) {
-    idArray.push(books[i].id);
-  }
-  const newId = Math.floor(Math.random() * (1000 - books.length)) + 1;
-  if (idArray.includes(newId)) {
-    createID();
-  } return newId;
-}
+createBookFields(books);
 
 // Добавление новой книги и работа с ней
 addButton.addEventListener('click', (e) => {
@@ -186,16 +174,16 @@ addButton.addEventListener('click', (e) => {
       popupBookYearInput.reportValidity();
       return;
     }
-
+    counter += 1;
     const newBook = {
-      id: createID(),
+      id: counter,
       title: popupBookTitleInput.value,
       author: popupBookAuthorInput.value,
       year: popupBookYearInput.value,
       img: popupBookImageInput.value,
     };
 
-    createBookField([newBook]);
+    createBookFields([newBook]);
 
     closePopup();
   });
