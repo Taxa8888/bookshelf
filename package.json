@@ -4,7 +4,8 @@
     "description": "My project",
     "main": "index.js",
     "scripts": {
-        "lint": "eslint src --ext .js"
+        "lint": "eslint src --ext .js",
+        "pug": "pug index.pug -P"
     },
     "repository": {
         "type": "git",
