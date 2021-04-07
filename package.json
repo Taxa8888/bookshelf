@@ -16,7 +16,9 @@
         "url": "https://github.com/Taxa8888/bookshelf/issues"
     },
     "homepage": "https://github.com/Taxa8888/bookshelf#readme",
-    "dependencies": {},
+    "dependencies": {
+        "pug": "3.0.2"
+    },
     "devDependencies": {
         "eslint": "7.22.0",
         "eslint-config-airbnb-base": "14.2.1",
