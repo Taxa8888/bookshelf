@@ -1,0 +1,30 @@
+.popup-button-cancel {
+    width: 100px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.book-button-add {
+    @extend .popup-button-cancel;
+    margin: 20px 40px;
+}
+
+.book-button-edit {
+    @extend .popup-button-cancel;
+    position: absolute;
+    bottom: 50px;
+    right: 5px;
+    margin-bottom: 2px;
+}
+
+.book-button-delete {
+    @extend .popup-button-cancel;
+    position: absolute;
+    bottom: 10px;
+    right: 5px;
+}
+
+.popup-button-save {
+    @extend .popup-button-cancel;
+    margin: 5px 10px;
+}

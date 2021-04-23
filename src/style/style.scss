@@ -1,0 +1,47 @@
+@import '../wrapper_shadow/wrapper_shadow.styles.scss';
+@import '../main_title/main_title.styles.scss';
+@import '../popup/popup.styles.scss';
+@import '../card/card.styles.scss';
+@import '../button/button.styles.scss';
+
+$main_color: green;
+
+@mixin main_text() {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;
+    font-weight: 700;
+    color: $main_color;
+    letter-spacing: 3px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+    background: url('../img/background.jpg');
+    margin: 0 auto;
+    @include main_text();
+}
+
+.body-overflow {
+    overflow: hidden;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}

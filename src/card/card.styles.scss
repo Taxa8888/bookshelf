@@ -1,8 +1,6 @@
 .book-card {
     width: 480px;
     height: 320px;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
     position: relative;
     margin: 25px;
@@ -16,23 +14,22 @@
     border-radius: 19px 0 0 19px;
 }
 
-.book-card-view,
-.book-card-title,
-.book-card-author,
-.book-card-year {
+.book-card-view {
     position: absolute;
     margin: 15px;
 }
 
 .book-card-title {
+    @extend .book-card-view;
     top: 10px;
 }
 
 .book-card-author {
+    @extend .book-card-view;
     bottom: 45%;
 }
 
 .book-card-year {
+    @extend .book-card-view;
     bottom: 5%;
 }
-/*# sourceMappingURL=card.styles.css.map */
