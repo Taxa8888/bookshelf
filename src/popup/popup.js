@@ -1,5 +1,6 @@
 // Вызываем форму добавление или редактирования книги
 const body = document.querySelector('body');
+const wrapperShadow = document.querySelector('.wrapper-shadow');
 
 const createPopupForm = (e) => {
     const popupAdd = document.createElement('div');
@@ -59,4 +60,20 @@ const createPopupForm = (e) => {
     popupButtonContainer.append(popupButtonCancel);
 };
 
-export default createPopupForm;
+// Действие при открытие модального окна
+const openPopup = () => {
+    wrapperShadow.classList.toggle('wrapper-shadow--active');
+    body.classList.toggle('body-overflow');
+};
+
+// Действие при закрытие модального окна
+const closePopup = () => {
+    body.removeChild(body.lastChild);
+    wrapperShadow.classList.toggle('wrapper-shadow--active');
+    body.classList.toggle('body-overflow');
+};
+
+// Действие по click по shadow области
+wrapperShadow.addEventListener('click', closePopup);
+
+export { createPopupForm, openPopup, closePopup };

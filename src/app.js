@@ -1,9 +1,6 @@
 import books from './books.js';
-import createPopupForm from './popup/poput.script.js';
-import closePopup from './popup/popupClose.script.js';
-import openPopup from './popup/popupOpen.script.js';
+import { createPopupForm, openPopup, closePopup } from './popup/popup.js';
 
-const wrapperShadow = document.querySelector('.wrapper-shadow');
 const mainContainer = document.querySelector('.main-container');
 const addButton = document.querySelector('.book-button-add');
 let counter = 3;
@@ -140,6 +137,3 @@ addButton.addEventListener('click', (e) => {
 
     popupButtonCancel.addEventListener('click', closePopup);
 });
-
-// Действие по click по shadow области
-wrapperShadow.addEventListener('click', closePopup);
