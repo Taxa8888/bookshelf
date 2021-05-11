@@ -6,7 +6,6 @@
     "scripts": {
         "lint": "eslint src --ext .js",
         "pug": "pug index.pug -P",
-        "sass": "sass ./src/style/style.scss  ./src/style/style.css",
         "build": "cross-env NODE_ENV=production webpack --config webpack.common.js --mode production",
         "dev": "cross-env NODE_ENV=development webpack --config webpack.common.js --mode development",
         "start": "cross-env NODE_ENV=development webpack serve --config webpack.common.js --mode development"
@@ -42,6 +41,7 @@
         "sass": "1.32.11",
         "sass-loader": "11.1.0",
         "style-loader": "2.0.0",
+        "url-loader": "^4.1.1",
         "webpack": "5.37.0",
         "webpack-cli": "4.7.0",
         "webpack-dev-server": "3.11.2"

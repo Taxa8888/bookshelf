@@ -7,16 +7,16 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const isDev = process.env.NODE_ENV === 'development';
 const isProd = !isDev;
 
-const filename = (ext) =>
-    isDev ? `[name].${ext}` : `[name].[contenthash].${ext}`;
+const filename = (ext) => (isDev ? `[name].${ext}` : `[contenthash].${ext}`);
 
 module.exports = {
     context: path.resolve(__dirname, './'),
     mode: 'development',
     entry: './src/app.js',
     output: {
-        filename: `./src/script/${filename('js')}`,
+        filename: `${filename('js')}`,
         path: path.resolve(__dirname, 'build'),
+        publicPath: '',
     },
     devServer: {
         historyApiFallback: true,
@@ -36,16 +36,16 @@ module.exports = {
         }),
         new CleanWebpackPlugin(),
         new MiniCssExtractPlugin({
-            filename: `./src/style/${filename('css')}`,
+            filename: `${filename('css')}`,
         }),
-        // new CopyWebpackPlugin({
-        //     patterns: [
-        //         {
-        //             from: path.resolve(__dirname, './src/img'),
-        //             to: path.resolve(__dirname, 'build/src/img'),
-        //         },
-        //     ],
-        // }),
+        new CopyWebpackPlugin({
+            patterns: [
+                {
+                    from: path.resolve(__dirname, './src/img'),
+                    to: path.resolve(__dirname, 'build/src/img'),
+                },
+            ],
+        }),
     ],
     module: {
         rules: [
@@ -54,26 +54,14 @@ module.exports = {
                 loader: 'html-loader',
             },
             {
-                test: /\.css$/i,
-                use: [
-                    {
-                        loader: MiniCssExtractPlugin.loader,
-                        options: {
-                            hmr: isDev,
-                        },
-                    },
-                    'css-loader',
-                ],
-            },
-            {
-                test: /\.s[ac]ss$/,
+                test: /\.(sa|sc|c)ss$/,
                 use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
             },
             {
                 test: /\.(?:|gif|png|jpg|jpeg|svg)$/i,
                 loader: 'file-loader',
                 options: {
-                    name: `./src/img/${filename('[ext]')}`,
+                    name: `${filename('[ext]')}`,
                 },
             },
         ],

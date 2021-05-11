@@ -4,7 +4,7 @@
 @import '../card/card.styles.scss';
 @import '../button/button.styles.scss';
 
-$main_color: green;
+$main_color: red;
 
 @mixin main_text() {
     font-family: 'Courier New', Courier, monospace;
@@ -23,7 +23,7 @@ body {
     width: 100%;
     height: auto;
     min-height: 100vh;
-    background: url('../img/background.jpg');
+    background: url('../assets/background.jpg');
     margin: 0 auto;
     @include main_text();
 }
