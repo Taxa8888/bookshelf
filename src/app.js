@@ -1,5 +1,7 @@
 import books from './books.js';
 import { createPopupForm, openPopup, closePopup } from './popup/popup.js';
+import './style/style.scss';
+import '../index.html';
 
 const mainContainer = document.querySelector('.main-container');
 const addButton = document.querySelector('.book-button-add');
