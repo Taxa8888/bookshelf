@@ -2,14 +2,10 @@ extends src/layout/main_layout.pug
 
 block variables
     - let pageTitle = "Bookshelf1"
-    - let mainTitle = "Книжная полка"
-    - let addButton = "Добавить"
 
 block content
     include src/wrapper_shadow/wrapper_shadow.layout.pug
     main.footer
-        include src/main_title/main_title.layout.pug
-        include src/button/button.layout.pug
     .wrapper
         .main-container
 

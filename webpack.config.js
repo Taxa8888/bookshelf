@@ -17,7 +17,6 @@ module.exports = (env, { stats, mode }) => {
             publicPath: '',
         },
         devServer: {
-            historyApiFallback: true,
             contentBase: path.resolve(__dirname, 'build'),
             open: true,
             compress: true,
@@ -60,7 +59,7 @@ module.exports = (env, { stats, mode }) => {
                 },
                 {
                     test: /\.m?js$/,
-                    exclude: /(node_modules|bower_components)/,
+                    exclude: /(node_modules)/,
                     use: {
                         loader: 'babel-loader',
                         options: {
