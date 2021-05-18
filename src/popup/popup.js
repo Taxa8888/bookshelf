@@ -1,3 +1,5 @@
+import './popup.styles.scss';
+
 // Вызываем форму добавление или редактирования книги
 const body = document.querySelector('body');
 const wrapperShadow = document.querySelector('.wrapper-shadow');

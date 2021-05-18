@@ -1,7 +1,9 @@
-import books from './books.js';
-import { createPopupForm, openPopup, closePopup } from './popup/popup.js';
+import books from './books';
+import { createPopupForm, openPopup, closePopup } from './popup/popup';
+import { createBookCard } from './card/card';
 import './style/style.scss';
-import '../index.html';
+import '../index.pug';
+import './main_title/main_title.layout.pug';
 
 const mainContainer = document.querySelector('.main-container');
 const addButton = document.querySelector('.book-button-add');
@@ -10,7 +12,7 @@ let counter = 3;
 // Отображаем список книг
 const createBookFields = (allBooks) => {
     allBooks.forEach((kit) => {
-        const bookCard = document.createElement('div');
+        const bookCard = createBookCard(kit.id);
         const bookImage = document.createElement('img');
         const bookInfo = document.createElement('div');
         const bootTitle = document.createElement('h3');
@@ -18,8 +20,6 @@ const createBookFields = (allBooks) => {
         const bookYear = document.createElement('h5');
         const buttonEdit = document.createElement('button');
         const buttonDelete = document.createElement('button');
-
-        bookCard.className = 'book-card';
         bookInfo.className = 'book-information';
         bookImage.className = 'book-card-image';
         bootTitle.className = 'book-card-title';
@@ -28,7 +28,6 @@ const createBookFields = (allBooks) => {
         buttonEdit.className = 'book-button-edit';
         buttonDelete.className = 'book-button-delete';
 
-        bookCard.dataset.number = kit.id;
         bookImage.src = kit.img;
         bootTitle.textContent = `${kit.title}`;
         bookAuthor.textContent = `${kit.author}`;
