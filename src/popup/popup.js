@@ -1,3 +1,6 @@
+import './popup.styles.scss';
+import { buttonCard } from '../button/button';
+
 // Вызываем форму добавление или редактирования книги
 const body = document.querySelector('body');
 const wrapperShadow = document.querySelector('.wrapper-shadow');
@@ -14,8 +17,8 @@ const createPopupForm = (e) => {
     const popupBookImage = document.createElement('h4');
     const popupBookImageInput = document.createElement('input');
     const popupButtonContainer = document.createElement('div');
-    const popupButtonSave = document.createElement('button');
-    const popupButtonCancel = document.createElement('button');
+    const popupButtonSave = buttonCard('saveButton');
+    const popupButtonCancel = buttonCard('cancelButton');
 
     popupAdd.className = 'popup-add';
     popupAddTitle.className = 'popup-add--title';
@@ -30,8 +33,6 @@ const createPopupForm = (e) => {
     popupBookImage.className = 'popup-book--image';
     popupBookImageInput.className = 'popup-book--image-input';
     popupButtonContainer.className = 'popup-button--container';
-    popupButtonSave.className = 'popup-button-save';
-    popupButtonCancel.className = 'popup-button-cancel';
 
     if (e.path[0].textContent === 'Добавить') {
         popupAddTitle.textContent = 'Добавление новой книги';
@@ -42,8 +43,6 @@ const createPopupForm = (e) => {
     popupBookAuthor.textContent = 'Автор(ы):';
     popupBookYear.textContent = 'Год издания:';
     popupBookImage.textContent = 'Ссылка на изображение';
-    popupButtonSave.textContent = 'Сохранить';
-    popupButtonCancel.textContent = 'Отменить';
 
     body.append(popupAdd);
     popupAdd.append(popupAddTitle);

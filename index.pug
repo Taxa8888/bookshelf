@@ -1,23 +1,11 @@
-extends ./src/layout/main_layout.pug
+extends src/layout/main_layout.pug
 
 block variables
-    - let pageTitle = "Bookshelf"
-    - let mainTitle = "Книжная полка"
-    - let addButton = "Добавить"
+    - let pageTitle = "Bookshelf1"
 
-block styles
-    link(rel="stylesheet" href="./src/style/style.css")
-    link(rel="stylesheet" href="./src/button/button.styles.css")
-    link(rel="stylesheet" href="./src/card/card.styles.css")
-    link(rel="stylesheet" href="./src/main_title/main_title.styles.css")
-    link(rel="stylesheet" href="./src/popup/popup.styles.css")
-    link(rel="stylesheet" href="./src/wrapper_shadow/wrapper_shadow.styles.css")
 block content
     include src/wrapper_shadow/wrapper_shadow.layout.pug
     main.footer
-        include src/main_title/main_title.layout.pug
-        include src/button/button.layout.pug
     .wrapper
         .main-container
-block scripts
-    script(type="module" src="./src/index.js")
+

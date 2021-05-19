@@ -1,38 +1,43 @@
-import books from './books.js';
-import { createPopupForm, openPopup, closePopup } from './popup/popup.js';
+import books from './books';
+import { createPopupForm, openPopup, closePopup } from './popup/popup';
+import { createBookCard } from './card/card';
+import { buttonCard } from './button/button';
+import { createMainTitle } from './main_title/main_title';
+import './style/style.scss';
+import '../index.pug';
 
 const mainContainer = document.querySelector('.main-container');
-const addButton = document.querySelector('.book-button-add');
+const footer = document.querySelector('.footer');
+const addButton = buttonCard('addButton');
+const text = 'Книжная полка';
+const state = 'main-title';
+const mainTitle = createMainTitle(text, state);
+footer.append(addButton);
+footer.append(mainTitle);
+
 let counter = 3;
 
 // Отображаем список книг
 const createBookFields = (allBooks) => {
     allBooks.forEach((kit) => {
-        const bookCard = document.createElement('div');
+        const bookCard = createBookCard(kit.id);
         const bookImage = document.createElement('img');
         const bookInfo = document.createElement('div');
         const bootTitle = document.createElement('h3');
         const bookAuthor = document.createElement('h4');
         const bookYear = document.createElement('h5');
-        const buttonEdit = document.createElement('button');
-        const buttonDelete = document.createElement('button');
-
-        bookCard.className = 'book-card';
+        const buttonEdit = buttonCard('editButton');
+        const buttonDelete = buttonCard('deleteButton');
         bookInfo.className = 'book-information';
         bookImage.className = 'book-card-image';
         bootTitle.className = 'book-card-title';
         bookAuthor.className = 'book-card-author';
         bookYear.className = 'book-card-year';
-        buttonEdit.className = 'book-button-edit';
-        buttonDelete.className = 'book-button-delete';
 
-        bookCard.dataset.number = kit.id;
         bookImage.src = kit.img;
         bootTitle.textContent = `${kit.title}`;
         bookAuthor.textContent = `${kit.author}`;
         bookYear.textContent = `${kit.year}`;
-        buttonEdit.textContent = 'Редактировать';
-        buttonDelete.textContent = 'Удалить';
 
         mainContainer.append(bookCard);
         bookCard.append(bookImage);
